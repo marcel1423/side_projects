@@ -10,11 +10,11 @@ package geometrie;
  * @author mnovak
  */
 public class Obvod {
-    private int strana;
-    private int strana1;
-    private int strana2;
+    private double strana;
+    private double strana1;
+    private double strana2;
     
-    Obvod (int strana) {
+    Obvod (double strana) {
         this.strana = strana;
     }
     
@@ -23,29 +23,37 @@ public class Obvod {
         System.out.println("Nezadal jsi delku strany. Strana byla automaticky nastavena na 0.");
     }
     
-    Obvod (int strana, int strana1) {
+    Obvod (double strana, double strana1) {
         this.strana = strana;
         this.strana1 = strana1;
     }
     
-    Obvod (int strana, int strana1, int strana2 ) {
+    Obvod (double strana, double strana1, double strana2 ) {
         this.strana = strana;
         this.strana2 = strana1;
         this.strana2 = strana2;
     }
-    int Vypocet_obvodu_ctverec() {
-        return 4 * strana;
+    double Vypocet_obvodu_ctverec() {
+        return strana * 4;
     }
     
-    int Vypocet_obsahu_ctverec() {
+    double Vypocet_obsahu_ctverec() {
         return strana * strana;
     }
     
-    int Vypocet_obvodu_dvoustranny() {
-        return 2 * (strana + strana1);
+    double Vypocet_obvodu_dvoustranny() {
+        return (strana + strana1) * 2;
     }
     
-    int Vypocet_obsahu_dvoustranny() {
+    double Vypocet_obsahu_dvoustranny() {
         return strana * strana1;
+    }
+    
+    double Vypocet_obvodu_trojuhelnik() {
+        return strana + strana1 + strana2;
+    }
+    
+    double Vypocet_obsahu_trojuhelnik() {
+        return strana * strana1 * strana2;
     }
 }

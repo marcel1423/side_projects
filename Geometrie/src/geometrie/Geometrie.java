@@ -16,7 +16,7 @@ public class Geometrie {
      */
     public static void main(String[] args) {
         
-        Obvod obvod = new Obvod();
+        Obvod obvod = new Obvod(3);
         
         System.out.println("Obvod: " + obvod.Vypocet_obvodu_ctverec());
         System.out.println("Obsah: " + obvod.Vypocet_obsahu_ctverec());
