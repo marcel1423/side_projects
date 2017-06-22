@@ -19,12 +19,12 @@ public class Trojuhelnik extends Ctyruhelnik {
     Trojuhelnik() {
         super();
     }
-    
-    double Vypocet_obvodu_trojuhelnik() {
+    @Override
+    public double Vypocet_obvodu() {
         return strana + strana1 + strana2;
     }
-    
-    double Vypocet_obsahu_trojuhelnik() {
+    @Override
+    public double Vypocet_obsahu() {
         return strana * strana1 * strana2;
     }
 }

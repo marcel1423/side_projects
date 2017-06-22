@@ -9,7 +9,7 @@ package geometrie_2;
  *
  * @author mnovak
  */
-public class Ctyruhelnik {
+public class Ctyruhelnik implements Vypocty {
     protected double strana;
     protected double strana1;
     
@@ -27,11 +27,12 @@ public class Ctyruhelnik {
         this.strana1 = strana1;
     }
     
-    double Vypocet_obvodu_ctverec() {
+    @Override
+    public double Vypocet_obvodu() {
         return strana * 4;
     }
-    
-    double Vypocet_obsahu_ctverec() {
+    @Override
+    public double Vypocet_obsahu() {
         return strana * strana;
     }
     
