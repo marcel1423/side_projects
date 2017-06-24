@@ -12,13 +12,13 @@ import java.io.*;
  */
 public class Nacti_cislo {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    private int strana;
+    private static double strana;
+    private double strany[];
     
-    Nacti_cislo() {
+    Nacti_cislo() {   }
+    
+    static double Nacitani() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    }
-    
-    int Nacitani() throws IOException {
             try {
                         strana = Integer.parseInt(br.readLine());
                     } catch (NumberFormatException vyj) {
@@ -26,5 +26,17 @@ public class Nacti_cislo {
                            strana = 0;
                      }
             return strana;
+    }
+    
+    double[] Nacitani(int pocet) throws IOException {
+        strany = new double[pocet];
+            try {
+                for (int i = 0; i < strany.length; i ++ )  
+                      strany[i] = Integer.parseInt(br.readLine());
+                    } catch (NumberFormatException vyj) {
+                          System.out.println("Nespravny format.");
+                           strana = 0;
+                     }
+            return strany;
     }
 }

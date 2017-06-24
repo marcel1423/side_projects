@@ -9,22 +9,18 @@ import static java.lang.Math.*;
  *
  * @author mnovak
  */
-public class Kruznice extends Ctyruhelnik {
+public class Kruznice extends Ctverec {
     
     Kruznice(int polomer) {
         super(polomer);
     }
+    Kruznice() {}
     
-    Kruznice () {
-        System.out.println("Nezadal jsi delku kruznice. Polomer byl automaticky nastaven na 0.");
-    }
-    
-    @Override
     public double Vypocet_obvodu() {
         return PI * strana * 2;
     }
     
-    @Override
+    
     public double Vypocet_obsahu() {
         return PI * pow(strana, 2);
     }
