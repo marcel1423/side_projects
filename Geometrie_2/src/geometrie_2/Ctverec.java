@@ -31,24 +31,4 @@ public class Ctverec {
     double Uhlopricka() {
         return strana * Math.sqrt(2);
     }
-    
-    
-     void Vypis() throws IOException {
-        System.out.print("Zadej delky strany ctverce: ");
-        strana = Nacti_cislo.Nacitani();
-        boolean konec = false;
-        do {
-        System.out.println("1 - Obsah ctverce\n2 - Obvod ctverce\n3 - Uhlopricka");
-        int vyber_2 = (int)Nacti_cislo.Nacitani();
-        switch (vyber_2) {
-            case 1: System.out.println("Obsah ctverce je: " + Vypocet_obsahu());
-                    break;
-            case 2: System.out.println("Obvod ctverce je: " + Vypocet_obvodu());
-                    break;
-            case 3: System.out.println("Uhlopricka ctverce je: " + Uhlopricka());
-                    break;
-            default: System.out.println("Vyber 1 - 3!!"); konec = true;
-        }
-        } while (konec);
-    }
 }

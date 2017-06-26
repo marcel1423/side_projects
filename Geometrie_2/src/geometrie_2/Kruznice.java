@@ -12,7 +12,7 @@ import static java.lang.Math.*;
  */
 public class Kruznice extends Ctverec {
     
-    Kruznice(int polomer) {
+    Kruznice(double polomer) {
         super(polomer);
     }
     Kruznice() {}
@@ -26,18 +26,5 @@ public class Kruznice extends Ctverec {
     @Override
     double Vypocet_obsahu() {
         return PI * pow(strana, 2);
-    }
-    
-    @Override
-    void Vypis() throws IOException {
-        System.out.print("Zadej delku polomeru kruznice: ");
-        strana = Nacti_cislo.Nacitani();
-        System.out.println("1 - Obsah kruznice\n2 - Obvod kruznice");
-        int vyber_2 = (int)Nacti_cislo.Nacitani();
-        switch (vyber_2) {
-            case 1: System.out.println("Obsah kruznice je: " + Vypocet_obsahu());
-                    break;
-            case 2: System.out.println("Obvod kruznice je: " + Vypocet_obvodu());
-        }
     }
 }
