@@ -27,4 +27,18 @@ public class Kruznice extends Ctverec {
     double Vypocet_obsahu() {
         return PI * pow(strana, 2);
     }
+    @Override
+    void Vypis() throws IOException {
+        boolean vypni = false;
+        do {
+              System.out.println("1 - Obsah kruznice\n2 - Obvod kruznice");
+              switch ((int)Nacti_cislo.Nacitani()) {
+                  case 1: System.out.println("Obsah kruznice je: " + Vypocet_obsahu());
+                  break;
+                  case 2: System.out.println("Obvod kruznice je: " + Vypocet_obvodu());
+                  break;
+                  default: System.out.println("Zadej 1 - 2!"); vypni = true;  
+              }
+        } while ( vypni );      
+    }
 }

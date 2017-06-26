@@ -11,8 +11,7 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public class Mnohouhelnik {
-    private double strany[];
+public class Mnohouhelnik extends Obdelnik {
     Mnohouhelnik() {
       //  delky = x; /* nemusim nastavovat rozsah delky, protoze predavam odkaz na pole x */
     }
@@ -20,15 +19,32 @@ public class Mnohouhelnik {
     Mnohouhelnik (double strany[]) {
         this.strany = strany;
     }
-    public double Vypocet_obvodu(double strany[]) {
+    @Override
+    public double Vypocet_obvodu() {
         double obvod = 0;
         for (int i = 0; i < strany.length; i ++ ) obvod += strany[i];
         return obvod;
     }
     
-    public double Vypocet_obsahu(double strany[]) {
+    @Override
+    public double Vypocet_obsahu() {
         double obsah = 1;
         for (int i = 0; i < strany.length; i ++ ) obsah *= strany[i];
         return obsah;
+    }
+    
+    @Override
+    void Vypis() throws IOException {
+        boolean vypni = false;
+        do {
+              System.out.println("1 - Obsah mnohouhelniku\n2 - Obvod mnohouhelniku");
+              switch ((int)Nacti_cislo.Nacitani()) {
+                  case 1: System.out.println("Obsah mnohouhelniku je: " + Vypocet_obsahu());
+                  break;
+                  case 2: System.out.println("Obvod mnohouhelniku je: " + Vypocet_obvodu());
+                  break;
+                  default: System.out.println("Zadej 1 - 2!"); vypni = true;  
+              }
+        } while ( vypni );      
     }
 }

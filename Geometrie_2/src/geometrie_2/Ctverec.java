@@ -31,4 +31,20 @@ public class Ctverec {
     double Uhlopricka() {
         return strana * Math.sqrt(2);
     }
+    
+    void Vypis() throws IOException {
+        boolean vypni = false;
+        do {
+              System.out.println("1 - Obsah ctverce\n2 - Obvod ctverce\n3 - Uhlopricka ctverce");
+              switch ((int)Nacti_cislo.Nacitani()) {
+                  case 1: System.out.println("Obsah ctverce je: " + Vypocet_obsahu());
+                  break;
+                  case 2: System.out.println("Obvod ctverce je: " + Vypocet_obvodu());
+                  break;
+                  case 3: System.out.println("Uhlopricka ctverce je: " + Uhlopricka());
+                  break;
+                  default: System.out.println("Zadej 1 - 3!"); vypni = true;  
+              }
+        } while ( vypni );      
+    }
 }

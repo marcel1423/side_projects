@@ -16,111 +16,60 @@ public class Geometrie_2 {
         Mnohouhelnik mnohouhelnik;
         Obdelnik obdelnik;
         Kruznice kruznice;
-        Nacti_cislo nacitani = new Nacti_cislo();
-        double strana;
-        double strany[];
-        int vyber;
-        boolean konec = false, vypni = false;
+        Krychle krychle;
+        boolean konec = false;
         do {
             System.out.println("Vyber si co chces spocitat" );
+            System.out.println("Pro tvary ve 2D stiskni 1\nPro tvary ve 3D stikni 2");
+        if ((int)Nacti_cislo.Nacitani() == 1) {
             System.out.println("1 - Ctverec\n2 - Obdelnik\n3 - Trojuhelnik\n4 - Mnohouhelnik\n5 - Kruznice\n0 - Konec");
-            vyber = (int)Nacti_cislo.Nacitani();
             
-            switch (vyber) {
+            switch ((int)Nacti_cislo.Nacitani()) {
                 case 1: 
                     System.out.print("Zadej delky strany ctverce: ");
-                    strana = Nacti_cislo.Nacitani();
-                    ctverec = new Ctverec(strana);
-                    do {
-                    System.out.println("1 - Obsah ctverce\n2 - Obvod ctverce\n3 - Uhlopricka");
-                    int vyber_2 = (int)Nacti_cislo.Nacitani();
-                    switch (vyber_2) {
-                        case 1: System.out.println("Obsah ctverce je: " + ctverec.Vypocet_obsahu());
-                                break;
-                        case 2: System.out.println("Obvod ctverce je: " + ctverec.Vypocet_obvodu());
-                                break;
-                        case 3: System.out.println("Uhlopricka ctverce je: " + ctverec.Uhlopricka());
-                                break;
-                        default: System.out.println("Vyber 1 - 3!!"); vypni = true;
-                    }
-                   } while (vypni);                    
+                    //Do ctverce prirazuji hodnotu tim ze je rovnou nacitam a nemusim si tak vytvaret dalsi promenou   
+                    ctverec = new Ctverec(Nacti_cislo.Nacitani());
+                    ctverec.Vypis();
                     break;
                 case 2:
-                    strany = new double[vyber];
                     System.out.print("Zadej delky strany obdelniku: ");
-                    strany = nacitani.Nacitani(vyber);
-                    obdelnik = new Obdelnik(strany);
-                    do {
-                    System.out.println("1 - Obsah obdelniku\n2 - Obvod obdelniku\n3 - Uhlopricka obdelniku");
-                    int vyber_2 = (int)nacitani.Nacitani();
-                    switch (vyber_2) {
-                        case 1: System.out.println("Obsah obdelniku je: " + obdelnik.Vypocet_obsahu());
-                        break;
-                        case 2: System.out.println("Obvod obdelniku je: " + obdelnik.Vypocet_obvodu());
-                        break;
-                        case 3: System.out.println("Uhlopricka obdelniku je: " + obdelnik.Uhlopricka());
-                        break;
-                        default: System.out.println("Zadej 1 - 3!"); vypni = true;
-                    }
-                    } while ( vypni );
-                    
+                    obdelnik = new Obdelnik(Nacti_cislo.Nacitani(2));     
+                    obdelnik.Vypis();
                     break;
                 case 3:
-                    strany = new double[vyber];
                     System.out.print("Zadej delky strany trojuhelniku: ");
-                    strany = nacitani.Nacitani(vyber);
-                    do {
-                    System.out.println("1 - Obsah trojuhelniku\n2 - Obvod trojuhelniku");
-                    trojuhelnik = new Trojuhelnik(strany);
-                    int vyber_2 = (int)nacitani.Nacitani();
-                    switch (vyber_2) {
-                        case 1: System.out.println("Obsah trojuhelniku je: " + trojuhelnik.Vypocet_obsahu(strany));
-                                break;
-                        case 2: System.out.println("Obvod trojuhelniku je: " + trojuhelnik.Vypocet_obvodu(strany));
-                                break;
-                        default: System.out.println("Zadej 1 - 2!"); vypni = true;
-                    }
-                    } while (vypni);
+                    trojuhelnik = new Trojuhelnik(Nacti_cislo.Nacitani(3));
+                    trojuhelnik.Vypis();
                     break;
                 case 4:
-                    System.out.print("Zadej kolika chces zadat stran: " );
+                    System.out.print("Zadej kolika chces stran: " );
                     int max = (int)Nacti_cislo.Nacitani();
                     System.out.print("Zadej delky strany mnohouhelniku: ");
-                    strany = nacitani.Nacitani(max);
-                    mnohouhelnik = new Mnohouhelnik(strany);
-                    do {
-                    System.out.println("1 - Obsah mnohouhelniku\n2 - Obvod mnohouhelniku");
-                    int vyber_2 = (int)nacitani.Nacitani();
-                    switch (vyber_2) {
-                        case 1: System.out.println("Obsah mnohouhelniku je: " + mnohouhelnik.Vypocet_obsahu(strany));
-                                break;
-                        case 2: System.out.println("Obvod mnohouhelniku je: " + mnohouhelnik.Vypocet_obvodu(strany));
-                                break;  
-                        default: System.out.println("Zadej 1 - 2!"); vypni = true;
-                    }     
-                    } while (vypni);
+                    /*Do mnohouhelniku prirazuji pole tim ze ho rovnou nacitam a nemusim si tak vytvaret dalsi promenou a jeho 
+                     * rozsah je dany promennou max tu zadat musim protoze po ni nasleduje dalsi otazka
+                    */
+                    mnohouhelnik = new Mnohouhelnik(Nacti_cislo.Nacitani(max)); 
+                    mnohouhelnik.Vypis();
                     break;
                 case 5:
                     System.out.print("Zadej delku polomeru kruznice: ");
-                    strana = Nacti_cislo.Nacitani();
-                    kruznice = new Kruznice(strana);
-                    do {
-                    System.out.println("1 - Obsah kruznice\n2 - Obvod kruznice");
-                    int vyber_2 = (int)Nacti_cislo.Nacitani();
-                    switch (vyber_2) {
-                        case 1: System.out.println("Obsah kruznice je: " + kruznice.Vypocet_obsahu());
-                                break;
-                        case 2: System.out.println("Obvod kruznice je: " + kruznice.Vypocet_obvodu());
-                                break;
-                        default: System.out.println("Zadej 1 - 2!"); vypni = true;
-                    }
-                    } while (vypni);
+                    kruznice = new Kruznice(Nacti_cislo.Nacitani());
+                    kruznice.Vypis();
                     break;
                 case 0: konec = true; break;
                 default: System.out.println("Vyber 0 - 5!");
             } 
-        } while (!konec);
+        } else {
+            System.out.println("1 - Krychle\n2 - Kvadr\n3 - Jehlan\n4 - Valec\n5 - Koule\n6 - Hranol\n7 - Kuzel\n0 - Konec");
+            switch ((int)Nacti_cislo.Nacitani()) {
+                case 1: 
+                    System.out.print("Zadej delky strany ctverce: ");
+                    //Do ctverce prirazuji hodnotu tim ze je rovnou nacitam a nemusim si tak vytvaret dalsi promenou   
+                    krychle = new Krychle(Nacti_cislo.Nacitani());
+                    krychle.Vypis();
+                    break;
+        }
+        } 
+    } while (!konec);
     }
-    
-    
 }

@@ -32,7 +32,7 @@ public class Nacti_cislo {
             return strana;
     }
     
-    double[] Nacitani(int pocet) throws IOException {
+    static double[] Nacitani(int pocet) throws IOException {
         //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Scanner br = new Scanner(System.in);
         double strany[] = new double[pocet];

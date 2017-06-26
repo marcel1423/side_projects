@@ -11,9 +11,8 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public class Trojuhelnik extends Ctverec {
-    private double strana, strana1, strana2;
-    private double strany[];
+public class Trojuhelnik extends Obdelnik {
+    private double strana2;
     
     Trojuhelnik() {}   
     
@@ -26,11 +25,28 @@ public class Trojuhelnik extends Ctverec {
                     }
     }
    
-    public double Vypocet_obvodu(double strany[]) {
+    @Override
+    public double Vypocet_obvodu() {
         return strana + strana1 + strana2;
     }
    
-    public double Vypocet_obsahu(double strany[]) {
+    @Override
+    public double Vypocet_obsahu() {
         return strana * strana1 * strana2;
+    }
+    
+    @Override
+    void Vypis() throws IOException {
+        boolean vypni = false;
+        do {
+              System.out.println("1 - Obsah trojuhelniku\n2 - Obvod trojuhelniku");
+              switch ((int)Nacti_cislo.Nacitani()) {
+                  case 1: System.out.println("Obsah trojuhelniku je: " + Vypocet_obsahu());
+                  break;
+                  case 2: System.out.println("Obvod trojuhelniku je: " + Vypocet_obvodu());
+                  break;
+                  default: System.out.println("Zadej 1 - 2!"); vypni = true;  
+              }
+        } while ( vypni );      
     }
 }
