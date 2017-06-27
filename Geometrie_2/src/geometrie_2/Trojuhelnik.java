@@ -12,16 +12,22 @@ import java.io.IOException;
  * @author mnovak
  */
 public class Trojuhelnik extends Obdelnik {
-    private double strana2;
+    protected double strana2;
     
     Trojuhelnik() {}   
     
+    Trojuhelnik(double strana) {
+        super(strana);
+    }    
+    
     Trojuhelnik(double strany[]) {
         this.strany = strany;
-        for (int i = 0; i < strany.length; i ++ ) { 
-                        strana = strany[i];
-                        strana1 = strany[i];
-                        strana2 = strany[i];
+        for (int i = 0; i < strany.length; i++ ) { /*nefunguje pro jehlan musim upravit aby se to zadavola do tech 
+                                                    * stran postupne a ne takhle jednorazove
+                                                   */
+                        strana = strany[0];
+                        strana1 = strany[1];
+                        strana2 = strany[2];
                     }
     }
    

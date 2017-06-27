@@ -50,4 +50,19 @@ public class Nacti_cislo {
             } while (konec);
             return strany;
     }
+    
+    static String Nacitani_znaku() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String i = "";
+        boolean konec = true;
+        do {
+            try {
+                i = br.readLine();
+                konec = false;
+            } catch (InputMismatchException vyj) {
+                System.out.println("Nespravny format.");
+            }
+        } while (konec);
+        return i;
+    }
 }

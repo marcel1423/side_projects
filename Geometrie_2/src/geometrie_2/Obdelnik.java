@@ -15,11 +15,15 @@ public class Obdelnik extends Ctverec {
     double strany[];
     double strana1;
     
+    Obdelnik(double strana) {
+        super(strana);
+    }
+    
     Obdelnik (double strany[]) {
         this.strany = strany;
         for (int i = 0; i < strany.length; i ++ ) { 
-                        strana = strany[i];
-                        strana1 = strany[i];
+                        strana = strany[0];
+                        strana1 = strany[1];
                     }
     }
     Obdelnik() { }
@@ -29,8 +33,8 @@ public class Obdelnik extends Ctverec {
         return 2 * (strana + strana1);
     }
     
-    @Override
-    double Vypocet_obsahu() {
+    double Vypocet_obsahu_obdelnik() {
+        System.out.println("Strana: " + strana + "Strana1: " + strana1);
         return strana * strana1;
     }
     
@@ -45,7 +49,7 @@ public class Obdelnik extends Ctverec {
         do {
               System.out.println("1 - Obsah obdelniku\n2 - Obvod obdelniku\n3 - Uhlopricka obdelniku");
               switch ((int)Nacti_cislo.Nacitani()) {
-                  case 1: System.out.println("Obsah obdelniku je: " + Vypocet_obsahu());
+                  case 1: System.out.println("Obsah obdelniku je: " + Vypocet_obsahu_obdelnik());
                   break;
                   case 2: System.out.println("Obvod obdelniku je: " + Vypocet_obvodu());
                   break;
