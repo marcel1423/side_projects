@@ -46,7 +46,7 @@ public class Geometrie_2 {
                             trojuhelnik.Vypis();
                             break;
                         case 4:
-                            System.out.print("Zadej kolika chces stran: " );
+                            System.out.print("Zadej kolik chces stran: " );
                             int max = (int)Nacti_cislo.Nacitani();
                             System.out.print("Zadej delky strany mnohouhelniku: ");
                             /*Do mnohouhelniku prirazuji pole tim ze ho rovnou nacitam a nemusim si tak vytvaret dalsi promenou a jeho
@@ -81,19 +81,13 @@ public class Geometrie_2 {
                             kvadr.Vypis();
                             break;
                         case 3:
-                         /*   System.out.print("Zadej typ podstavy: ");
-                            String ret = Nacti_cislo.Nacitani_znaku();
-                            System.out.print("Zadej vysku: " );
+                          System.out.print("Zadej vysku: " );
                             double vyska = Nacti_cislo.Nacitani();
+                            System.out.print("Zadej jaky tvar ma podstava(ctverec, obdelnik, trojuhelnik, mnohouhelnik): ");
+                            String tvar = Nacti_cislo.Nacitani_znaku();
                             System.out.print("\nZadej delky stran podstavy: ");
-                            if (ret.equalsIgnoreCase("ctverec") ) {
-                                jehlan = new Jehlan (Nacti_cislo.Nacitani(), vyska);
-                            } else if (ret.equalsIgnoreCase("obdelnik")) {
-                                jehlan = new Jehlan (Nacti_cislo.Nacitani(2), vyska);
-                            } else {
-                                jehlan = new Jehlan (Nacti_cislo.Nacitani(3), vyska);
-                            }*/
-                            jehlan = new Jehlan();
+                            jehlan = new Jehlan (Nacti_cislo.Nacitani(Jehlan.Nacitani(tvar)), vyska);
+                            jehlan.Vypis();
                     }           break;
             } 
     } while (!konec);

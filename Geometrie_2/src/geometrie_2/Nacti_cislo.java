@@ -65,4 +65,24 @@ public class Nacti_cislo {
         } while (konec);
         return i;
     }
+    
+    /*static int Nacitani(String tvar) throws IOException {
+        boolean konec = true;
+        int pocet = 0;
+        do {
+        if (tvar.equalsIgnoreCase("ctverec")) {
+            pocet = 1;
+        } else if (tvar.equalsIgnoreCase("obdelnik")final) {
+            pocet = 2;
+        } else if (tvar.equalsIgnoreCase("trojuhelnik")) {
+            pocet = 3;
+        } else if (tvar.equalsIgnoreCase("mnohouhelnik")) {
+            pocet = (int)Nacitani();
+        } else {
+            System.out.println("Nezadal jsi zadny z geometrickych tvaru.");
+            konec = false;
+        }
+        } while (!konec);
+            return pocet;
+    }*/
 }

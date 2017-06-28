@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public final class Jehlan extends Trojuhelnik {
     protected double vyska;
-    Jehlan jehlan;
+    protected int delka;
     
     Jehlan () throws IOException {
         Vypis();
@@ -27,56 +27,57 @@ public final class Jehlan extends Trojuhelnik {
     Jehlan (double strany[], double vyska) {
         super(strany);     
         this.vyska = vyska;
+        delka = strany.length;
+         System.out.println("Delka: " + delka);
     }
     
-    double Vypocet_objemu(String tvar) {
-        if (tvar.equalsIgnoreCase("ctverec"))
-            return (1.0/3.0) * Vypocet_obsahu_ctverec()* vyska;
-        else if (tvar.equalsIgnoreCase("obdelnik"))
-            return (1.0/3.0) * Vypocet_obsahu_obdelnik() * vyska;
-        else if (tvar.equalsIgnoreCase("trojuhelnik"))
-            return (1.0/3.0) * Vypocet_obsahu_trojuhelnik()* vyska;
-        else {
-            Mnohouhelnik mnohouhelnik = new Mnohouhelnik(strany);
-            return (1.0/3.0) * mnohouhelnik.Vypocet_obsahu_mnohouhelnik() * vyska;
+    double Vypocet_objemu() {
+        System.out.println("Delka: " + delka);
+        switch (delka) {
+            case 1:
+                return (1.0/3.0) * Vypocet_obsahu_ctverec()* vyska;
+            case 2:
+                return (1.0/3.0) * Vypocet_obsahu_obdelnik() * vyska;
+            case 3:
+                return (1.0/3.0) * Vypocet_obsahu_trojuhelnik()* vyska;
+            default:
+                Mnohouhelnik mnohouhelnik = new Mnohouhelnik(strany);
+                return (1.0/3.0) * mnohouhelnik.Vypocet_obsahu_mnohouhelnik() * vyska;
         }
-    }
-    double Vypocet_objemu_jehlanu_obdelnik() {
-        return (1.0/3.0) * Vypocet_obsahu_obdelnik() * vyska;
-    }
-    
-    double Vypocet_objemu_jehlanu_ctverec() {
-        return (1.0/3.0) * Vypocet_obsahu_ctverec()* vyska;
-    }
-    double Vypocet_objemu_jehlanu_trojuhelnik() {
-        return (1.0/3.0) * Vypocet_obsahu_trojuhelnik()* vyska;
     }
     
     @Override
     void Vypis() throws IOException {
         boolean vypni = false;
         do {
-            System.out.print("Zadej typ podstavy: ");
-            String ret = Nacti_cislo.Nacitani_znaku();
-            System.out.print("Zadej vysku: " );
-            vyska = Nacti_cislo.Nacitani();
-              
-              System.out.print("\nZadej delky stran podstavy: ");
-                            if (ret.equalsIgnoreCase("ctverec") ) {
-                                jehlan = new Jehlan (Nacti_cislo.Nacitani(), vyska);
-                            } else if (ret.equalsIgnoreCase("obdelnik")) {
-                                jehlan = new Jehlan (Nacti_cislo.Nacitani(2), vyska);
-                            } else {
-                                jehlan = new Jehlan (Nacti_cislo.Nacitani(3), vyska);
-                            }
-                            System.out.println("1 - Objem jehlanu\n2 - Obvod trojuhelniku");
+            System.out.println("1 - Objem jehlanu\n2 - Obvod trojuhelniku");
               switch ((int)Nacti_cislo.Nacitani()) {
-                  case 1: System.out.println("Objem jehlanu je: " + jehlan.Vypocet_objemu(ret));
+                  case 1: System.out.println("Objem jehlanu je: " + Vypocet_objemu());
                   break;
                   case 2: System.out.println("Obvod trojuhelniku je: " + Vypocet_obvodu_ctverec());
                   break;
                   default: System.out.println("Zadej 1 - 2!"); vypni = true;  
               }
         } while ( vypni );      
+    }
+    
+    static int Nacitani(String tvar) throws IOException {
+        boolean konec = true;
+        int pocet = 0;
+        do {
+        if (tvar.equalsIgnoreCase("ctverec")) {
+            pocet = 1;
+        } else if (tvar.equalsIgnoreCase("obdelnik")) {
+            pocet = 2;
+        } else if (tvar.equalsIgnoreCase("trojuhelnik")) {
+            pocet = 3;
+        } else if (tvar.equalsIgnoreCase("mnohouhelnik")) {
+            pocet = (int)Nacti_cislo.Nacitani();
+        } else {
+            System.out.println("Nezadal jsi zadny z geometrickych tvaru.");
+            konec = false;
+        }
+        } while (!konec);
+            return pocet;
     }
 }
