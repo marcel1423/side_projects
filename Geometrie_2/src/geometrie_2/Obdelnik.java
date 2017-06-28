@@ -21,26 +21,20 @@ public class Obdelnik extends Ctverec {
     
     Obdelnik (double strany[]) {
         this.strany = strany;
-        for (int i = 0; i < strany.length; i ++ ) { 
-                        strana = strany[0];
-                        strana1 = strany[1];
-                    }
     }
     Obdelnik() { }
     
-    @Override
-    double Vypocet_obvodu(){
-        return 2 * (strana + strana1);
+    double Vypocet_obvodu_obdelnik(){
+        return 2 * (strany[0] + strany[1]);
     }
     
     double Vypocet_obsahu_obdelnik() {
-        System.out.println("Strana: " + strana + "Strana1: " + strana1);
-        return strana * strana1;
+        //System.out.println("Strana: " + strana + "Strana1: " + strana1);
+        return strany[0] * strany[1];
     }
     
-    @Override
-    double Uhlopricka() {
-        return Math.sqrt(Math.pow(strana, 2) + Math.pow(strana1, 2));
+    double Uhlopricka_obdelnik() {
+        return Math.sqrt(Math.pow(strany[0], 2) + Math.pow(strany[1], 2));
     }
     
     @Override
@@ -51,9 +45,9 @@ public class Obdelnik extends Ctverec {
               switch ((int)Nacti_cislo.Nacitani()) {
                   case 1: System.out.println("Obsah obdelniku je: " + Vypocet_obsahu_obdelnik());
                   break;
-                  case 2: System.out.println("Obvod obdelniku je: " + Vypocet_obvodu());
+                  case 2: System.out.println("Obvod obdelniku je: " + Vypocet_obvodu_obdelnik());
                   break;
-                  case 3: System.out.println("Uhlopricka obdelniku je: " + Uhlopricka());
+                  case 3: System.out.println("Uhlopricka obdelniku je: " + Uhlopricka_obdelnik());
                   break;
                   default: System.out.println("Zadej 1 - 3!"); vypni = true;  
               }

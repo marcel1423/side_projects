@@ -12,7 +12,6 @@ import java.io.IOException;
  * @author mnovak
  */
 public class Trojuhelnik extends Obdelnik {
-    protected double strana2;
     
     Trojuhelnik() {}   
     
@@ -21,24 +20,15 @@ public class Trojuhelnik extends Obdelnik {
     }    
     
     Trojuhelnik(double strany[]) {
-        this.strany = strany;
-        for (int i = 0; i < strany.length; i++ ) { /*nefunguje pro jehlan musim upravit aby se to zadavola do tech 
-                                                    * stran postupne a ne takhle jednorazove
-                                                   */
-                        strana = strany[0];
-                        strana1 = strany[1];
-                        strana2 = strany[2];
-                    }
+        super (strany);
     }
    
-    @Override
-    public double Vypocet_obvodu() {
-        return strana + strana1 + strana2;
+    public double Vypocet_obvodu_trojuhelnik() {
+        return strany[0] + strany[1] + strany[2];
     }
    
-    @Override
-    public double Vypocet_obsahu() {
-        return strana * strana1 * strana2;
+    public double Vypocet_obsahu_trojuhelnik() {
+        return strany[0] * strany[1] * strany[2];
     }
     
     @Override
@@ -47,9 +37,9 @@ public class Trojuhelnik extends Obdelnik {
         do {
               System.out.println("1 - Obsah trojuhelniku\n2 - Obvod trojuhelniku");
               switch ((int)Nacti_cislo.Nacitani()) {
-                  case 1: System.out.println("Obsah trojuhelniku je: " + Vypocet_obsahu());
+                  case 1: System.out.println("Obsah trojuhelniku je: " + Vypocet_obsahu_trojuhelnik());
                   break;
-                  case 2: System.out.println("Obvod trojuhelniku je: " + Vypocet_obvodu());
+                  case 2: System.out.println("Obvod trojuhelniku je: " + Vypocet_obvodu_trojuhelnik());
                   break;
                   default: System.out.println("Zadej 1 - 2!"); vypni = true;  
               }

@@ -17,19 +17,19 @@ public class Kvadr extends Trojuhelnik {
     }
     
     double Vypocet_objemu() {
-        return strana * strana1 * strana2;
+        return strany[0] * strany[1] * strany[2];
     }
     
     double Vypocet_povrchu() {
-        return 2 * ((strana * strana1) + (strana1 * strana2) + (strana * strana2) );
+        return 2 * ((strany[0] * strany[1]) + (strany[1] * strany[2]) + (strany[0] * strany[2]) );
     }
     
     double Telesova_uhlopricka() {
-        return sqrt(pow(strana,2) + pow(strana1,2) + pow (strana2,2));
+        return sqrt(pow(strany[0],2) + pow(strany[1],2) + pow (strany[2],2));
     }
     
     double Stenova_uhlopricka() {
-        return sqrt(pow(strana, 2) + pow(strana1, 2));
+        return sqrt(pow(strany[0], 2) + pow(strany[1], 2));
     }
     
     @Override

@@ -81,7 +81,7 @@ public class Geometrie_2 {
                             kvadr.Vypis();
                             break;
                         case 3:
-                            System.out.print("Zadej typ podstavy: ");
+                         /*   System.out.print("Zadej typ podstavy: ");
                             String ret = Nacti_cislo.Nacitani_znaku();
                             System.out.print("Zadej vysku: " );
                             double vyska = Nacti_cislo.Nacitani();
@@ -92,8 +92,8 @@ public class Geometrie_2 {
                                 jehlan = new Jehlan (Nacti_cislo.Nacitani(2), vyska);
                             } else {
                                 jehlan = new Jehlan (Nacti_cislo.Nacitani(3), vyska);
-                            }
-                            jehlan.Vypis();
+                            }*/
+                            jehlan = new Jehlan();
                     }           break;
             } 
     } while (!konec);

@@ -17,14 +17,12 @@ public class Kruznice extends Ctverec {
     }
     Kruznice() {}
     
-    @Override
     double Vypocet_obvodu() {
         return PI * strana * 2;
     }
     
     
-    @Override
-    double Vypocet_obsahu() {
+double Vypocet_obsahu() {
         return PI * pow(strana, 2);
     }
     @Override
