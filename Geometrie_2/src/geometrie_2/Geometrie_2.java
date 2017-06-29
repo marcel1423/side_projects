@@ -81,13 +81,29 @@ public class Geometrie_2 {
                             kvadr.Vypis();
                             break;
                         case 3:
-                          System.out.print("Zadej vysku: " );
-                            double vyska = Nacti_cislo.Nacitani();
-                            System.out.print("Zadej jaky tvar ma podstava(ctverec, obdelnik, trojuhelnik, mnohouhelnik): ");
-                            String tvar = Nacti_cislo.Nacitani_znaku();
-                            System.out.print("\nZadej delky stran podstavy: ");
-                            jehlan = new Jehlan (Nacti_cislo.Nacitani(Jehlan.Nacitani(tvar)), vyska);
-                            jehlan.Vypis();
+                            boolean vypni = false;
+                            do {
+                                System.out.println("1 - Objem jehlanu\n2 - Povrch jehlanu");
+                                  switch ((int)Nacti_cislo.Nacitani()) {
+                                      case 1:   System.out.print("Zadej vysku: " );
+                                                double vyska = Nacti_cislo.Nacitani();
+                                                System.out.print("Zadej jaky tvar ma podstava(ctverec, obdelnik, trojuhelnik, mnohouhelnik): ");
+                                                String tvar = Nacti_cislo.Nacitani_znaku();
+                                                System.out.print("Zadej delky stran podstavy: ");
+                                                jehlan = new Jehlan (Nacti_cislo.Nacitani(Jehlan.Nacitani(tvar)), vyska);
+                                                System.out.println("Objem jehlanu je: " + jehlan.Vypocet_objemu());
+                                      break;
+                                      case 2:   System.out.print("Zadej jaky tvar ma podstava(ctverec, obdelnik, trojuhelnik, mnohouhelnik): ");
+                                                String tvar1 = Nacti_cislo.Nacitani_znaku();
+                                                System.out.print("\nZadej delky stran podstavy: ");
+                                                double pom[] = Nacti_cislo.Nacitani(Jehlan.Nacitani(tvar1));
+                                                System.out.print("Zadej delky stran plaste(trojuhelniku): ");
+                                                jehlan = new Jehlan (pom, Nacti_cislo.Nacitani(3));
+                                                System.out.println("Povrch  jehlanu je: " + jehlan.Vypocet_povrchu());
+                                      break;
+                                      default: System.out.println("Zadej 1 - 2!"); vypni = true;  
+                                  }
+                            } while ( vypni );
                     }           break;
             } 
     } while (!konec);
