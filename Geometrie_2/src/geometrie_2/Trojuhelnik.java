@@ -28,6 +28,7 @@ public class Trojuhelnik extends Obdelnik {
     }
    
     public double Vypocet_obsahu_trojuhelnik() {
+        //System.out.println("strany[0] = " + strany[0] + "strany[1] = " + strany[1] + "strany[2] = " + strany[2]);
         return strany[0] * strany[1] * strany[2];
     }
     

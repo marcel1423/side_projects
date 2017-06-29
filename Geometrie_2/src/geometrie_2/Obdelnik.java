@@ -51,6 +51,6 @@ public class Obdelnik extends Ctverec {
                   break;
                   default: System.out.println("Zadej 1 - 3!"); vypni = true;  
               }
-        } while ( vypni );      
+        } while ( vypni );
     }
 }

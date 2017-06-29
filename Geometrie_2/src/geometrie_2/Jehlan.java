@@ -13,6 +13,7 @@ import java.io.IOException;
  */
 public final class Jehlan extends Trojuhelnik {
     protected double vyska;
+    protected double podstava[];
     protected int delka;
     
     Jehlan () throws IOException {
@@ -24,42 +25,52 @@ public final class Jehlan extends Trojuhelnik {
         this.vyska = vyska;
     }
     
-    Jehlan (double strany[], double vyska) {
-        super(strany);     
+    Jehlan (double podstava[], double vyska) {
+        super(podstava);     
         this.vyska = vyska;
-        delka = strany.length;
-         System.out.println("Delka: " + delka);
+    }
+    
+    Jehlan (double podstava[], double plast[]) {
+        super(plast);
+        this.podstava = podstava; 
+    }
+    
+    double Zjisteni_podstavy() {
+        switch (podstava.length) {
+            case 1:
+                return Vypocet_obsahu_ctverec();
+            case 2:
+                return Vypocet_obsahu_obdelnik();
+            case 3:
+                return Vypocet_obsahu_trojuhelnik();
+            default:
+                Mnohouhelnik mnohouhelnik = new Mnohouhelnik(podstava);
+                return mnohouhelnik.Vypocet_obsahu_mnohouhelnik();
+    }
     }
     
     double Vypocet_objemu() {
-        System.out.println("Delka: " + delka);
-        switch (delka) {
-            case 1:
-                return (1.0/3.0) * Vypocet_obsahu_ctverec()* vyska;
-            case 2:
-                return (1.0/3.0) * Vypocet_obsahu_obdelnik() * vyska;
-            case 3:
-                return (1.0/3.0) * Vypocet_obsahu_trojuhelnik()* vyska;
-            default:
-                Mnohouhelnik mnohouhelnik = new Mnohouhelnik(strany);
-                return (1.0/3.0) * mnohouhelnik.Vypocet_obsahu_mnohouhelnik() * vyska;
-        }
+        return (1.0/3.0) * Zjisteni_podstavy() * vyska;
     }
     
-    @Override
+    double Vypocet_povrchu() {
+        return Zjisteni_podstavy() * Vypocet_obsahu_trojuhelnik();
+    }
+    
+   /* @Override
     void Vypis() throws IOException {
         boolean vypni = false;
         do {
-            System.out.println("1 - Objem jehlanu\n2 - Obvod trojuhelniku");
+            System.out.println("1 - Objem jehlanu\n2 - Povrch jehlanu");
               switch ((int)Nacti_cislo.Nacitani()) {
                   case 1: System.out.println("Objem jehlanu je: " + Vypocet_objemu());
                   break;
-                  case 2: System.out.println("Obvod trojuhelniku je: " + Vypocet_obvodu_ctverec());
+                  case 2: System.out.println("Povrch  jehlanu je: " + Vypocet_povrchu());
                   break;
                   default: System.out.println("Zadej 1 - 2!"); vypni = true;  
               }
         } while ( vypni );      
-    }
+    }*/
     
     static int Nacitani(String tvar) throws IOException {
         boolean konec = true;
