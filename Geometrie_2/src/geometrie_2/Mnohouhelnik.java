@@ -31,7 +31,6 @@ public class Mnohouhelnik extends Obdelnik {
         return obsah;
     }
     
-    @Override
     void Vypis() throws IOException {
         boolean vypni = false;
         do {

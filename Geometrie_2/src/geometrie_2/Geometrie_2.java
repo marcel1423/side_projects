@@ -19,6 +19,7 @@ public class Geometrie_2 {
         Krychle krychle;
         Kvadr kvadr;
         Jehlan jehlan;
+        Valec valec;
         boolean konec = false;
         int vyber;
         do {
@@ -103,7 +104,14 @@ public class Geometrie_2 {
                                       break;
                                       default: System.out.println("Zadej 1 - 2!"); vypni = true;  
                                   }
-                            } while ( vypni );
+                            } while ( vypni ); break;
+                        case 4:
+                            System.out.print("Zadej delku polomeru valce: ");
+                            double polomer = Nacti_cislo.Nacitani();
+                            System.out.print("Zadej delku vysky: ");
+                            valec = new Valec(polomer, Nacti_cislo.Nacitani());
+                            valec.Vypis();
+                            break;
                     }           break;
             } 
     } while (!konec);
