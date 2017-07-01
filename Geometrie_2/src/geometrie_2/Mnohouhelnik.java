@@ -11,13 +11,16 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public class Mnohouhelnik extends Obdelnik {
+public class Mnohouhelnik extends Trojuhelnik {
     Mnohouhelnik() {
       //  delky = x; /* nemusim nastavovat rozsah delky, protoze predavam odkaz na pole x */
     }
     
     Mnohouhelnik (double strany[]) {
         super(strany);
+    }
+    Mnohouhelnik (double strana) {
+        super (strana);
     }
     public double Vypocet_obvodu_mnohouhelnik() {
         double obvod = 0;

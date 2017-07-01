@@ -10,10 +10,14 @@ import static java.lang.Math.*;
  *
  * @author mnovak
  */
-public class Kvadr extends Trojuhelnik {
-    
+public class Kvadr extends Mnohouhelnik {
+    Kvadr() {}
+
     Kvadr (double strany[]) {
         super(strany);
+    }
+    Kvadr (double strana) {
+        super(strana);
     }
     
     double Vypocet_objemu() {

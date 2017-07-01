@@ -11,18 +11,19 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public final class Jehlan extends Trojuhelnik {
+public class Jehlan extends Kvadr {
     protected double vyska;
     protected double podstava[];
     protected int delka;
     
-    Jehlan () throws IOException {
-        Vypis();
-    }
-    
+    Jehlan() {}
+
     Jehlan (double strana, double vyska) {
         super(strana);
         this.vyska = vyska;
+    }
+    Jehlan (double strana) {
+        super (strana);
     }
     
     Jehlan (double podstava[], double vyska) {
@@ -38,21 +39,22 @@ public final class Jehlan extends Trojuhelnik {
     double Zjisteni_podstavy() {
         switch (podstava.length) {
             case 1:
-                return Vypocet_obsahu_ctverec();
+                //return Vypocet_obsahu_ctverec();
             case 2:
-                return Vypocet_obsahu_obdelnik();
+                //return Vypocet_obsahu_obdelnik();
             case 3:
                 return Vypocet_obsahu_trojuhelnik();
             default:
-                Mnohouhelnik mnohouhelnik = new Mnohouhelnik(podstava);
-                return mnohouhelnik.Vypocet_obsahu_mnohouhelnik();
+                return Vypocet_obsahu_mnohouhelnik();
     }
     }
     
+    @Override
     double Vypocet_objemu() {
         return (1.0/3.0) * Zjisteni_podstavy() * vyska;
     }
     
+    @Override
     double Vypocet_povrchu() {
         return Zjisteni_podstavy() * Vypocet_obsahu_trojuhelnik();
     }

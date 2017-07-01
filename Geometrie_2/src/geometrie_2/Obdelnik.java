@@ -11,7 +11,7 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public class Obdelnik extends Ctverec {
+public class Obdelnik extends Kruznice {
     double strany[];
     double strana1;
     
@@ -24,11 +24,13 @@ public class Obdelnik extends Ctverec {
     }
     Obdelnik() { }
     
-    double Vypocet_obvodu_obdelnik(){
+    @Override
+    double Vypocet_obvodu(){
         return 2 * (strany[0] + strany[1]);
     }
     
-    double Vypocet_obsahu_obdelnik() {
+    @Override
+    double Vypocet_obsahu() {
         //System.out.println("Strana: " + strana + "Strana1: " + strana1);
         return strany[0] * strany[1];
     }
@@ -43,14 +45,15 @@ public class Obdelnik extends Ctverec {
         do {
               System.out.println("1 - Obsah obdelniku\n2 - Obvod obdelniku\n3 - Uhlopricka obdelniku");
               switch ((int)Nacti_cislo.Nacitani()) {
-                  case 1: System.out.println("Obsah obdelniku je: " + Vypocet_obsahu_obdelnik());
+                  case 1: System.out.println("Obsah obdelniku je: " + Vypocet_obsahu());
                   break;
-                  case 2: System.out.println("Obvod obdelniku je: " + Vypocet_obvodu_obdelnik());
+                  case 2: System.out.println("Obvod obdelniku je: " + Vypocet_obvodu());
                   break;
                   case 3: System.out.println("Uhlopricka obdelniku je: " + Uhlopricka_obdelnik());
                   break;
                   default: System.out.println("Zadej 1 - 3!"); vypni = true;  
               }
         } while ( vypni );
+        //vypis.Vypis();
     }
 }

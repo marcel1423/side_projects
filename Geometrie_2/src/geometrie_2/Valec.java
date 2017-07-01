@@ -11,11 +11,18 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public class Valec extends Kruznice {
+public class Valec extends Krychle {
     protected double vyska;
+    
+
+    Valec() {}
+
     Valec(double polomer, double vyska) {
         super(polomer);
         this.vyska = vyska;
+    }
+    Valec(double strana) {
+        super (strana);
     }
     
     double Vypocet_objemu_valec() {

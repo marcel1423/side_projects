@@ -11,24 +11,30 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public class Krychle extends Ctverec{
+public class Krychle extends Jehlan{
     
+    Krychle() {}
+
     Krychle(double strana) {
         super(strana);
     }
     
+    @Override
     double Vypocet_objemu() {
         return Math.pow(strana, 3);
     }
     
+    @Override
     double Vypocet_povrchu() {
         return 6 * Math.pow(strana, 2);
     }
     
+    @Override
     double Telesova_uhlopricka() {
         return strana * Math.sqrt(3);
     }
     
+    @Override
     double Stenova_uhlopricka() {
         return strana * Math.sqrt(2);
     }
