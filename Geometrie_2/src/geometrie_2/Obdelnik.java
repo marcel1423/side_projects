@@ -24,13 +24,11 @@ public class Obdelnik extends Kruznice {
     }
     Obdelnik() { }
     
-    @Override
-    double Vypocet_obvodu(){
+    double Vypocet_obvodu_obdelnik(){
         return 2 * (strany[0] + strany[1]);
     }
     
-    @Override
-    double Vypocet_obsahu() {
+    double Vypocet_obsahu_obdelnik() {
         //System.out.println("Strana: " + strana + "Strana1: " + strana1);
         return strany[0] * strany[1];
     }
@@ -45,15 +43,14 @@ public class Obdelnik extends Kruznice {
         do {
               System.out.println("1 - Obsah obdelniku\n2 - Obvod obdelniku\n3 - Uhlopricka obdelniku");
               switch ((int)Nacti_cislo.Nacitani()) {
-                  case 1: System.out.println("Obsah obdelniku je: " + Vypocet_obsahu());
+                  case 1: System.out.println("Obsah obdelniku je: " + Vypocet_obsahu_obdelnik());
                   break;
-                  case 2: System.out.println("Obvod obdelniku je: " + Vypocet_obvodu());
+                  case 2: System.out.println("Obvod obdelniku je: " + Vypocet_obvodu_obdelnik());
                   break;
                   case 3: System.out.println("Uhlopricka obdelniku je: " + Uhlopricka_obdelnik());
                   break;
                   default: System.out.println("Zadej 1 - 3!"); vypni = true;  
               }
         } while ( vypni );
-        //vypis.Vypis();
     }
 }

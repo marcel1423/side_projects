@@ -20,11 +20,11 @@ public class Ctverec {
 
     Ctverec() { }
     
-    double Vypocet_obvodu() {
+    double Vypocet_obvodu_ctverec() {
         return 4 * strana;
     }
     
-    double Vypocet_obsahu() {
+    double Vypocet_obsahu_ctverec() {
         return strana * strana;
     }
     
@@ -37,9 +37,9 @@ public class Ctverec {
         do {
               System.out.println("1 - Obsah ctverce\n2 - Obvod ctverce\n3 - Uhlopricka ctverce");
               switch ((int)Nacti_cislo.Nacitani()) {
-                  case 1: System.out.println("Obsah ctverce je: " + Vypocet_obsahu());
+                  case 1: System.out.println("Obsah ctverce je: " + Vypocet_obsahu_ctverec());
                   break;
-                  case 2: System.out.println("Obvod ctverce je: " + Vypocet_obvodu());
+                  case 2: System.out.println("Obvod ctverce je: " + Vypocet_obvodu_ctverec());
                   break;
                   case 3: System.out.println("Uhlopricka ctverce je: " + Uhlopricka_ctverec());
                   break;

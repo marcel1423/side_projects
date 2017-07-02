@@ -13,7 +13,6 @@ import java.io.IOException;
  */
 public class Jehlan extends Kvadr {
     protected double vyska;
-    protected double podstava[];
     protected int delka;
     
     Jehlan() {}
@@ -26,22 +25,28 @@ public class Jehlan extends Kvadr {
         super (strana);
     }
     
+    Jehlan (double strany[]) {
+        super (strany);
+    }
     Jehlan (double podstava[], double vyska) {
         super(podstava);     
         this.vyska = vyska;
+        delka = podstava.length;
     }
     
     Jehlan (double podstava[], double plast[]) {
         super(plast);
-        this.podstava = podstava; 
+        delka = podstava.length;
     }
     
     double Zjisteni_podstavy() {
-        switch (podstava.length) {
+        switch (delka) {
             case 1:
-                //return Vypocet_obsahu_ctverec();
+                return Vypocet_obsahu_ctverec();
+            case 0:
+                System.out.println("Nezadal jsi strany podstavy."); return 0;
             case 2:
-                //return Vypocet_obsahu_obdelnik();
+                return Vypocet_obsahu_obdelnik();
             case 3:
                 return Vypocet_obsahu_trojuhelnik();
             default:
@@ -49,30 +54,13 @@ public class Jehlan extends Kvadr {
     }
     }
     
-    @Override
-    double Vypocet_objemu() {
+    double Vypocet_objemu_jehlan() {
         return (1.0/3.0) * Zjisteni_podstavy() * vyska;
     }
     
-    @Override
-    double Vypocet_povrchu() {
+    double Vypocet_povrchu_jehlan() {
         return Zjisteni_podstavy() * Vypocet_obsahu_trojuhelnik();
     }
-    
-   /* @Override
-    void Vypis() throws IOException {
-        boolean vypni = false;
-        do {
-            System.out.println("1 - Objem jehlanu\n2 - Povrch jehlanu");
-              switch ((int)Nacti_cislo.Nacitani()) {
-                  case 1: System.out.println("Objem jehlanu je: " + Vypocet_objemu());
-                  break;
-                  case 2: System.out.println("Povrch  jehlanu je: " + Vypocet_povrchu());
-                  break;
-                  default: System.out.println("Zadej 1 - 2!"); vypni = true;  
-              }
-        } while ( vypni );      
-    }*/
     
     static int Nacitani(String tvar) throws IOException {
         boolean konec = true;
