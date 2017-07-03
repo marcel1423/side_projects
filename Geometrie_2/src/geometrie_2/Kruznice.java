@@ -17,6 +17,9 @@ public class Kruznice extends Ctverec {
     }
     Kruznice() {}
     
+    Kruznice (double strany[]) {
+        super(strany);
+    }
     double Vypocet_obvodu() {
         return PI * strana * 2;
     }

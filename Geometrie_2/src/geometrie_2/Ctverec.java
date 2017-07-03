@@ -13,6 +13,7 @@ import java.io.IOException;
  */
 public class Ctverec {
     protected double strana;
+    protected double strany[];
     
     Ctverec (double strana) {
         this.strana = strana;
@@ -20,8 +21,16 @@ public class Ctverec {
 
     Ctverec() { }
     
+    Ctverec (double strany[]) {
+        this.strany = strany;
+    }
+    
     double Vypocet_obvodu_ctverec() {
         return 4 * strana;
+    }
+    
+    double Vypocet_obsahu_ctverec_1() {
+        return strany[0] * strany[0];
     }
     
     double Vypocet_obsahu_ctverec() {

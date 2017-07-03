@@ -20,6 +20,7 @@ public class Jehlan extends Kvadr {
     Jehlan (double strana, double vyska) {
         super(strana);
         this.vyska = vyska;
+        System.out.println("Strana: " + strana);
     }
     Jehlan (double strana) {
         super (strana);
@@ -29,7 +30,7 @@ public class Jehlan extends Kvadr {
         super (strany);
     }
     Jehlan (double podstava[], double vyska) {
-        super(podstava);     
+        super(podstava);
         this.vyska = vyska;
         delka = podstava.length;
     }
@@ -42,9 +43,7 @@ public class Jehlan extends Kvadr {
     double Zjisteni_podstavy() {
         switch (delka) {
             case 1:
-                return Vypocet_obsahu_ctverec();
-            case 0:
-                System.out.println("Nezadal jsi strany podstavy."); return 0;
+                return Vypocet_obsahu_ctverec_1();
             case 2:
                 return Vypocet_obsahu_obdelnik();
             case 3:
@@ -67,7 +66,7 @@ public class Jehlan extends Kvadr {
         int pocet = 0;
         do {
         if (tvar.equalsIgnoreCase("ctverec")) {
-            pocet = 1;
+             pocet = 1;
         } else if (tvar.equalsIgnoreCase("obdelnik")) {
             pocet = 2;
         } else if (tvar.equalsIgnoreCase("trojuhelnik")) {
