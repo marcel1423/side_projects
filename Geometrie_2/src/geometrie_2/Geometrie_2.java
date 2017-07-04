@@ -130,7 +130,7 @@ public class Geometrie_2 {
                                                 int max_1 = (int)Nacti_cislo.Nacitani();
                                                 System.out.print("Zadej delky stran podstavy: ");
                                                 hranol = new Hranol (Nacti_cislo.Nacitani(max_1), vyska);
-                                                System.out.println("Objem hranolu je: " + hranol.Vypocet_objemu());
+                                                System.out.println("Objem hranolu je: " + hranol.Vypocet_objemu_hranol());
                                       break;
                                       case 2:
                                           System.out.print("Zadej pocet stran mnohouhelniku: ");
@@ -138,8 +138,8 @@ public class Geometrie_2 {
                                           System.out.print("\nZadej delky stran podstavy: ");
                                                 double pom[] = Nacti_cislo.Nacitani(max);
                                                 System.out.print("Zadej delky stran plaste(): ");
-                                                hranol = new Hranol (pom, Nacti_cislo.Nacitani(3));
-                                                System.out.println("Povrch  hranolu je: " + hranol.Vypocet_povrchu());
+                                                hranol = new Hranol (pom, Nacti_cislo.Nacitani(2));
+                                                System.out.println("Povrch  hranolu je: " + hranol.Vypocet_povrchu_hranol());
                                       break;
                                       default: System.out.println("Zadej 1 - 2!"); vypni_1 = true;  
                                   }

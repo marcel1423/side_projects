@@ -23,12 +23,10 @@ public class Hranol extends Jehlan {
     Hranol (double podstava[], double vyska) {
         super(podstava);     
         this.vyska = vyska;
-        delka = podstava.length;
     }
     
     Hranol (double podstava[], double plast[]) {
         super(plast);
-        delka = podstava.length;
     }
     
     double Vypocet_objemu_hranol() {
