@@ -6,12 +6,13 @@
 package geometrie_2;
 
 import java.io.IOException;
-
+import static java.lang.Math.*;
 /**
  *
  * @author mnovak
  */
 public class Mnohouhelnik extends Trojuhelnik {
+    protected int pocet_stran;
     Mnohouhelnik() {
       //  delky = x; /* nemusim nastavovat rozsah delky, protoze predavam odkaz na pole x */
     }
@@ -22,16 +23,16 @@ public class Mnohouhelnik extends Trojuhelnik {
     Mnohouhelnik (double strana) {
         super (strana);
     }
+    Mnohouhelnik (double strana, int pocet_stran) {
+        super(strana);
+        this.pocet_stran = pocet_stran;
+    }
     public double Vypocet_obvodu_mnohouhelnik() {
-        double obvod = 0;
-        for (int i = 0; i < strany.length; i ++ ) obvod += strany[i];
-        return obvod;
+        return pocet_stran * strana;
     }
     
     public double Vypocet_obsahu_mnohouhelnik() {
-        double obsah = 1;
-        for (int i = 0; i < strany.length; i ++ ) obsah *= strany[i];
-        return obsah;
+        return (1.0/4.0) * pocet_stran * pow(strana, 2) * (cos(PI/pocet_stran)) / (sin(PI/pocet_stran));
     }
     
     void Vypis() throws IOException {

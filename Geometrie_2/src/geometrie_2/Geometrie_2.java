@@ -49,13 +49,13 @@ public class Geometrie_2 {
                             trojuhelnik.Vypis();
                             break;
                         case 4:
-                            System.out.print("Zadej kolik chces stran: " );
+                            System.out.print("Zadej pocet stran: " );
                             int max = (int)Nacti_cislo.Nacitani();
-                            System.out.print("Zadej delky strany mnohouhelniku: ");
+                            System.out.print("Zadej delku strany  pravidelneho mnohouhelniku: ");
                             /*Do mnohouhelniku prirazuji pole tim ze ho rovnou nacitam a nemusim si tak vytvaret dalsi promenou a jeho
                             * rozsah je dany promennou max tu zadat musim protoze po ni nasleduje dalsi otazka
                             */
-                            mnohouhelnik = new Mnohouhelnik(Nacti_cislo.Nacitani(max));
+                            mnohouhelnik = new Mnohouhelnik(Nacti_cislo.Nacitani(), max);
                             mnohouhelnik.Vypis();
                             break;
                         case 5:
@@ -128,17 +128,17 @@ public class Geometrie_2 {
                                                 double vyska = Nacti_cislo.Nacitani();
                                                 System.out.print("Zadej pocet stran mnohouhelniku: ");
                                                 int max_1 = (int)Nacti_cislo.Nacitani();
-                                                System.out.print("Zadej delky stran podstavy: ");
-                                                hranol = new Hranol (Nacti_cislo.Nacitani(max_1), vyska);
+                                                System.out.print("Zadej delku strany podstavy: ");
+                                                hranol = new Hranol (Nacti_cislo.Nacitani(), vyska, max_1);
                                                 System.out.println("Objem hranolu je: " + hranol.Vypocet_objemu_hranol());
                                       break;
                                       case 2:
+                                          System.out.print("Zadej vysku: " );
+                                          double vyska_1 = Nacti_cislo.Nacitani();
                                           System.out.print("Zadej pocet stran mnohouhelniku: ");
                                           int max = (int)Nacti_cislo.Nacitani();
-                                          System.out.print("\nZadej delky stran podstavy: ");
-                                                double pom[] = Nacti_cislo.Nacitani(max);
-                                                System.out.print("Zadej delky stran plaste(): ");
-                                                hranol = new Hranol (pom, Nacti_cislo.Nacitani(2));
+                                          System.out.print("\nZadej delku strany podstavy: ");
+                                                hranol = new Hranol (Nacti_cislo.Nacitani(), vyska_1, max);
                                                 System.out.println("Povrch  hranolu je: " + hranol.Vypocet_povrchu_hranol());
                                       break;
                                       default: System.out.println("Zadej 1 - 2!"); vypni_1 = true;  

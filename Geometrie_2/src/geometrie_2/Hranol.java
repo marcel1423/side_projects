@@ -12,9 +12,10 @@ package geometrie_2;
 public class Hranol extends Jehlan {
     Hranol() {}
 
-    Hranol (double strana, double vyska) {
+    Hranol (double strana, double vyska, int pocet_stran) {
         super(strana);
         this.vyska = vyska;
+        this.pocet_stran = pocet_stran;
     }
     Hranol (double strana) {
         super (strana);
@@ -34,6 +35,6 @@ public class Hranol extends Jehlan {
     }
     
     double Vypocet_povrchu_hranol() {
-        return (2 * Vypocet_obsahu_mnohouhelnik()) + (Vypocet_obsahu_obdelnik());
+        return (2 * Vypocet_obsahu_mnohouhelnik()) + (Vypocet_obvodu_mnohouhelnik() * vyska);
     }
 }
