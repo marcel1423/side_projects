@@ -33,10 +33,8 @@ public class Trojuhelnik extends Obdelnik {
         return Math.sqrt(s * (s - strany[0]) * (s - strany[1]) * (s - strany[2]));
     }
     
-    public double Vypocet_obsahu_rovnostranny_trojuhelnik() {
-        double s;
-        s = (strana + strana + strana) / 2;
-        return Math.sqrt(s * (s - strana) * (s - strana) * (s - strana));
+    public double Vypocet_obsahu_rovnostranny_trojuhelnik(double plast) {
+        return (Math.sqrt(3)/4) * Math.pow(plast, 2);
     }
     
     @Override

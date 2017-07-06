@@ -13,11 +13,17 @@ import java.io.IOException;
  */
 public class Jehlan extends Kvadr {
     protected double vyska;
+    protected double plast;
     protected int delka;
     
     Jehlan() {}
 
-    Jehlan (int max, double strana, double vyska) {
+    Jehlan (int max, double strana, double plast) {
+        super(strana);
+        this.plast = plast;
+        pocet_stran = max;
+    }
+    Jehlan( double strana, double vyska, int max) {
         super(strana);
         this.vyska = vyska;
         pocet_stran = max;
@@ -58,7 +64,7 @@ public class Jehlan extends Kvadr {
     }
     
     double Vypocet_povrchu_jehlan() {
-        return Vypocet_obsahu_mnohouhelnik() + (Vypocet_obsahu_rovnostranny_trojuhelnik() * pocet_stran);
+        return Vypocet_obsahu_mnohouhelnik() + (Vypocet_obsahu_rovnostranny_trojuhelnik(plast) * pocet_stran);
     }
     
     static int Nacitani(String tvar) throws IOException {

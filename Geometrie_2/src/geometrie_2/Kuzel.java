@@ -36,6 +36,6 @@ public class Kuzel extends Jehlan {
     }
     
     double Vypocet_povrchu_kuzel() {
-        return Vypocet_obsahu() * Vypocet_obsahu_trojuhelnik();
+        return Vypocet_obsahu() + (Math.PI * strana * Math.sqrt(Math.pow(strana, 2) + Math.pow(vyska,2) ) );
     }
 }

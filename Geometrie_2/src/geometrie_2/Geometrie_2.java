@@ -88,18 +88,24 @@ public class Geometrie_2 {
                             do {
                                 System.out.println("1 - Objem jehlanu\n2 - Povrch jehlanu");
                                   switch ((int)Nacti_cislo.Nacitani()) {
-                                      case 1:   System.out.print("Zadej vysku: " );
+                                      case 1:   /*System.out.print("Zadej vysku: " );
                                                 double vyska = Nacti_cislo.Nacitani();
                                                 System.out.print("Zadej jaky tvar ma podstava(ctverec, obdelnik, trojuhelnik, mnohouhelnik): ");
                                                 String tvar = Nacti_cislo.Nacitani_znaku();
                                                 System.out.print("Zadej delky stran podstavy: ");
                                                 jehlan = new Jehlan (Nacti_cislo.Nacitani((Jehlan.Nacitani(tvar))), vyska);
-                                                System.out.println("Objem hranolu je: " + jehlan.Vypocet_objemu_jehlan());
+                                                System.out.println("Objem hranolu je: " + jehlan.Vypocet_objemu_jehlan());*/
+                                                
+                                                System.out.print("Zadej pocet stran podstavy: ");
+                                                int max = (int)Nacti_cislo.Nacitani();
+                                                System.out.print("\nZadej delku strany podstavy: ");
+                                                double pom_1 = Nacti_cislo.Nacitani();
+                                                System.out.print("Zadej delku vysky: ");
+                                                jehlan = new Jehlan (pom_1, Nacti_cislo.Nacitani(), max);
+                                                System.out.println("Objem  jehlanu je: " + jehlan.Vypocet_objemu_jehlan());
                                       break;
-                                      case 2:   System.out.print("Zadej pocet stran mnohouhelniku: ");
+                                      case 2:   System.out.print("Zadej pocet stran podstavy: ");
                                                 int max_1 = (int)Nacti_cislo.Nacitani();
-                                                //System.out.print("Zadej jaky tvar ma podstava(ctverec, obdelnik, trojuhelnik, mnohouhelnik): ");
-                                                //String tvar1 = Nacti_cislo.Nacitani_znaku();
                                                 System.out.print("\nZadej delku strany podstavy: ");
                                                 double pom = Nacti_cislo.Nacitani();
                                                 System.out.print("Zadej delku strany plaste: ");
@@ -154,14 +160,14 @@ public class Geometrie_2 {
                                       case 1:   System.out.print("Zadej vysku: " );
                                                 double vyska = Nacti_cislo.Nacitani();
                                                 System.out.print("Zadej delku polomeru podstavy: ");
-                                                Kuzel kuzel = new Kuzel (Nacti_cislo.Nacitani(1), vyska);
+                                                Kuzel kuzel = new Kuzel (Nacti_cislo.Nacitani(), vyska);
                                                 System.out.println("Objem kuzelu je: " + kuzel.Vypocet_objemu_kuzel());
                                       break;
                                       case 2:   
                                                 System.out.print("\nZadej delku polomeru podstavy: ");
-                                                double pom[] = Nacti_cislo.Nacitani(1);
-                                                System.out.print("Zadej delky stran plaste(trojuhelniku): ");
-                                                kuzel = new Kuzel (pom, Nacti_cislo.Nacitani(3));
+                                                double pom = Nacti_cislo.Nacitani();
+                                                System.out.print("Zadej delku vysky: ");
+                                                kuzel = new Kuzel (pom, Nacti_cislo.Nacitani());
                                                 System.out.println("Povrch  kuzelu je: " + kuzel.Vypocet_povrchu_kuzel());
                                       break;
                                       default: System.out.println("Zadej 1 - 2!"); vypni_2 = true;  

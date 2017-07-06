@@ -32,6 +32,7 @@ public class Mnohouhelnik extends Trojuhelnik {
     }
     
     public double Vypocet_obsahu_mnohouhelnik() {
+//        System.out.println("Obsah mnoho: " + (1.0/4.0) * pocet_stran * pow(strana, 2) * (cos(PI/pocet_stran)) / (sin(PI/pocet_stran)));
         return (1.0/4.0) * pocet_stran * pow(strana, 2) * (cos(PI/pocet_stran)) / (sin(PI/pocet_stran));
     }
     
