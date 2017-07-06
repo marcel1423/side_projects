@@ -17,10 +17,10 @@ public class Jehlan extends Kvadr {
     
     Jehlan() {}
 
-    Jehlan (double strana, double vyska) {
+    Jehlan (int max, double strana, double vyska) {
         super(strana);
         this.vyska = vyska;
-        System.out.println("Strana: " + strana);
+        pocet_stran = max;
     }
     Jehlan (double strana) {
         super (strana);
@@ -54,11 +54,11 @@ public class Jehlan extends Kvadr {
     }
     
     double Vypocet_objemu_jehlan() {
-        return (1.0/3.0) * Zjisteni_podstavy() * vyska;
+        return (1.0/3.0) * Vypocet_obsahu_mnohouhelnik() * vyska;
     }
     
     double Vypocet_povrchu_jehlan() {
-        return Zjisteni_podstavy() * Vypocet_obsahu_trojuhelnik();
+        return Vypocet_obsahu_mnohouhelnik() + (Vypocet_obsahu_rovnostranny_trojuhelnik() * pocet_stran);
     }
     
     static int Nacitani(String tvar) throws IOException {

@@ -12,7 +12,6 @@ import java.io.IOException;
  * @author mnovak
  */
 public class Obdelnik extends Kruznice {
-    double strana1;
     
     Obdelnik(double strana) {
         super(strana);
