@@ -9,27 +9,13 @@ package geometrie_2;
  *
  * @author mnovak
  */
-public class Kuzel extends Jehlan {
+public class Kuzel extends Valec {
     Kuzel() {}
 
     Kuzel (double strana, double vyska) {
-        super(strana);
-        this.vyska = vyska;
-    }
-    Kuzel (double strana) {
-        super (strana);
+        super(strana, vyska);
     }
     
-    Kuzel (double podstava[], double vyska) {
-        super(podstava);     
-        this.vyska = vyska;
-        delka = podstava.length;
-    }
-    
-    Kuzel (double podstava[], double plast[]) {
-        super(plast);
-        delka = podstava.length;
-    }
     
     double Vypocet_objemu_kuzel() {
         return (1.0/3.0) * Vypocet_obsahu() * vyska;

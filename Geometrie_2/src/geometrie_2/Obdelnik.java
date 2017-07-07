@@ -12,27 +12,29 @@ import java.io.IOException;
  * @author mnovak
  */
 public class Obdelnik extends Kruznice {
+    protected double strana_1;
     
-    Obdelnik(double strana) {
+    Obdelnik( double strana) {
+        super (strana);
+    }
+    Obdelnik(double strana, double strana1) {
         super(strana);
+        this.strana_1 = strana1;
     }
     
-    Obdelnik (double strany[]) {
-        super(strany);
-    }
     Obdelnik() { }
     
     double Vypocet_obvodu_obdelnik(){
-        return 2 * (strany[0] + strany[1]);
+        return 2 * (strana + strana_1);
     }
     
     double Vypocet_obsahu_obdelnik() {
         //System.out.println("Strana: " + strana + "Strana1: " + strana1);
-        return strany[0] * strany[1];
+        return strana * strana_1;
     }
     
     double Uhlopricka_obdelnik() {
-        return Math.sqrt(Math.pow(strany[0], 2) + Math.pow(strany[1], 2));
+        return Math.sqrt(Math.pow(strana, 2) + Math.pow(strana_1, 2));
     }
     
     @Override

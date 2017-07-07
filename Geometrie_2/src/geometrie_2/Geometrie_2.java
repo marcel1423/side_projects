@@ -39,13 +39,19 @@ public class Geometrie_2 {
                             ctverec.Vypis();
                             break;
                         case 2:
-                            System.out.print("Zadej delky strany obdelniku: ");
-                            obdelnik = new Obdelnik(Nacti_cislo.Nacitani(2));
+                            System.out.print("Zadej delku strany a: ");
+                            double a = Nacti_cislo.Nacitani();
+                            System.out.print("Zadej delku strany b: ");
+                            obdelnik = new Obdelnik(a, Nacti_cislo.Nacitani());
                             obdelnik.Vypis();
                             break;
                         case 3:
-                            System.out.print("Zadej delky strany trojuhelniku: ");
-                            trojuhelnik = new Trojuhelnik(Nacti_cislo.Nacitani(3));
+                            System.out.print("Zadej delku strany a: ");
+                            double a_t = Nacti_cislo.Nacitani();
+                            System.out.print("Zadej delku strany b: ");
+                            double b_t = Nacti_cislo.Nacitani();
+                            System.out.print("Zadej delku strany a: ");
+                            trojuhelnik = new Trojuhelnik(a_t, b_t, Nacti_cislo.Nacitani());
                             trojuhelnik.Vypis();
                             break;
                         case 4:
@@ -79,8 +85,12 @@ public class Geometrie_2 {
                             krychle.Vypis();
                             break;
                         case 2:
-                            System.out.print("Zadej delky strany kvadru: ");
-                            kvadr = new Kvadr(Nacti_cislo.Nacitani(3));
+                            System.out.print("Zadej delku strany a: ");
+                            double a = Nacti_cislo.Nacitani();
+                            System.out.print("Zadej delku strany b: ");
+                            double b = Nacti_cislo.Nacitani();
+                            System.out.print("Zadej delku strany a: ");
+                            kvadr = new Kvadr(a, b, Nacti_cislo.Nacitani());
                             kvadr.Vypis();
                             break;
                         case 3: //jehlan
@@ -88,15 +98,7 @@ public class Geometrie_2 {
                             do {
                                 System.out.println("1 - Objem jehlanu\n2 - Povrch jehlanu");
                                   switch ((int)Nacti_cislo.Nacitani()) {
-                                      case 1:   /*System.out.print("Zadej vysku: " );
-                                                double vyska = Nacti_cislo.Nacitani();
-                                                System.out.print("Zadej jaky tvar ma podstava(ctverec, obdelnik, trojuhelnik, mnohouhelnik): ");
-                                                String tvar = Nacti_cislo.Nacitani_znaku();
-                                                System.out.print("Zadej delky stran podstavy: ");
-                                                jehlan = new Jehlan (Nacti_cislo.Nacitani((Jehlan.Nacitani(tvar))), vyska);
-                                                System.out.println("Objem hranolu je: " + jehlan.Vypocet_objemu_jehlan());*/
-                                                
-                                                System.out.print("Zadej pocet stran podstavy: ");
+                                      case 1:   System.out.print("Zadej pocet stran podstavy: ");
                                                 int max = (int)Nacti_cislo.Nacitani();
                                                 System.out.print("\nZadej delku strany podstavy: ");
                                                 double pom_1 = Nacti_cislo.Nacitani();

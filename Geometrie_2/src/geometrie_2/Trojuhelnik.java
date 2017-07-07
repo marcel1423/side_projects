@@ -12,25 +12,28 @@ import java.io.IOException;
  * @author mnovak
  */
 public class Trojuhelnik extends Obdelnik {
-    
+    protected double strana_2;
     Trojuhelnik() {}   
     
     Trojuhelnik(double strana) {
         super(strana);
     }    
     
-    Trojuhelnik(double strany[]) {
-        super (strany);
+    Trojuhelnik(double strana, double strana1, double strana2) {
+        super (strana, strana1);
+        strana_2 = strana2;
     }
+    
+    
    
     public double Vypocet_obvodu_trojuhelnik() {
-        return strany[0] + strany[1] + strany[2];
+        return strana + strana_1 + strana_2;
     }
    
     public double Vypocet_obsahu_trojuhelnik() {
         double s;
-        s = (strany[0] + strany[1] + strany[2]) / 2;
-        return Math.sqrt(s * (s - strany[0]) * (s - strany[1]) * (s - strany[2]));
+        s = (strana + strana_1 + strana_2) / 2;
+        return Math.sqrt(s * (s - strana) * (s - strana_1) * (s - strana_2));
     }
     
     public double Vypocet_obsahu_rovnostranny_trojuhelnik(double plast) {

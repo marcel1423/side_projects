@@ -11,22 +11,17 @@ import static java.lang.Math.*;
  *
  * @author mnovak
  */
-public class Mnohouhelnik extends Trojuhelnik {
+public class Mnohouhelnik extends Kvadr {
     protected int pocet_stran;
-    Mnohouhelnik() {
-      //  delky = x; /* nemusim nastavovat rozsah delky, protoze predavam odkaz na pole x */
-    }
     
-    Mnohouhelnik (double strany[]) {
-        super(strany);
-    }
-    Mnohouhelnik (double strana) {
-        super (strana);
-    }
+    Mnohouhelnik() {    }
+    
     Mnohouhelnik (double strana, int pocet_stran) {
         super(strana);
         this.pocet_stran = pocet_stran;
     }
+    
+    Mnohouhelnik (double strana) { super (strana); }
     public double Vypocet_obvodu_mnohouhelnik() {
         return pocet_stran * strana;
     }

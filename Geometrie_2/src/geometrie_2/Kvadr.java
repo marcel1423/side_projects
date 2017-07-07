@@ -10,30 +10,31 @@ import static java.lang.Math.*;
  *
  * @author mnovak
  */
-public class Kvadr extends Mnohouhelnik {
+public class Kvadr extends Trojuhelnik {
     Kvadr() {}
-
-    Kvadr (double strany[]) {
-        super(strany);
-    }
+    
     Kvadr (double strana) {
         super(strana);
     }
     
+    Kvadr (double strana, double strana1, double strana2) {
+        super (strana, strana1, strana2);
+    }
+    
     double Vypocet_objemu() {
-        return strany[0] * strany[1] * strany[2];
+        return strana * strana_1 * strana_2;
     }
     
     double Vypocet_povrchu() {
-        return 2 * ((strany[0] * strany[1]) + (strany[1] * strany[2]) + (strany[0] * strany[2]) );
+        return 2 * ((strana * strana_1) + (strana_1 * strana_2) + (strana * strana_2) );
     }
     
     double Telesova_uhlopricka() {
-        return sqrt(pow(strany[0],2) + pow(strany[1],2) + pow (strany[2],2));
+        return sqrt(pow(strana,2) + pow(strana_1,2) + pow (strana_2,2));
     }
     
     double Stenova_uhlopricka() {
-        return sqrt(pow(strany[0], 2) + pow(strany[1], 2));
+        return sqrt(pow(strana, 2) + pow(strana_1, 2));
     }
     
     @Override

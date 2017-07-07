@@ -11,7 +11,7 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public class Koule extends Valec {
+public class Koule extends Krychle {
     
 
     Koule() {}

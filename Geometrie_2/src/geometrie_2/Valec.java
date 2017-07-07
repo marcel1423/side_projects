@@ -11,8 +11,7 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public class Valec extends Krychle {
-    protected double vyska;
+public class Valec extends Jehlan {
     
 
     Valec() {}

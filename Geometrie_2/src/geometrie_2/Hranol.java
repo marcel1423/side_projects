@@ -10,24 +10,11 @@ package geometrie_2;
  * @author mnovak
  */
 public class Hranol extends Jehlan {
+    
     Hranol() {}
 
     Hranol (double strana, double vyska, int pocet_stran) {
-        super(strana);
-        this.vyska = vyska;
-        this.pocet_stran = pocet_stran;
-    }
-    Hranol (double strana) {
-        super (strana);
-    }
-    
-    Hranol (double podstava[], double vyska) {
-        super(podstava);     
-        this.vyska = vyska;
-    }
-    
-    Hranol (double podstava[], double plast[]) {
-        super(plast);
+        super (strana, vyska, pocet_stran);
     }
     
     double Vypocet_objemu_hranol() {

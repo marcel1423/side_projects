@@ -11,42 +11,22 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public class Jehlan extends Kvadr {
-    protected double vyska;
-    protected double plast;
-    protected int delka;
+public class Jehlan extends Mnohouhelnik {
+    protected double plast, vyska;
     
     Jehlan() {}
 
     Jehlan (int max, double strana, double plast) {
-        super(strana);
+        super(strana, max);
         this.plast = plast;
-        pocet_stran = max;
     }
     Jehlan( double strana, double vyska, int max) {
-        super(strana);
+        super(strana, max);
         this.vyska = vyska;
-        pocet_stran = max;
     }
-    Jehlan (double strana) {
-        super (strana);
-    }
+    Jehlan( double strana) { super (strana); }
     
-    Jehlan (double strany[]) {
-        super (strany);
-    }
-    Jehlan (double podstava[], double vyska) {
-        super(podstava);
-        this.vyska = vyska;
-        delka = podstava.length;
-    }
-    
-    Jehlan (double podstava[], double plast[]) {
-        super(plast);
-        delka = podstava.length;
-    }
-    
-    double Zjisteni_podstavy() {
+    /*double Zjisteni_podstavy() {
         switch (delka) {
             case 1:
                 return Vypocet_obsahu_ctverec_1();
@@ -57,7 +37,7 @@ public class Jehlan extends Kvadr {
             default:
                 return Vypocet_obsahu_mnohouhelnik();
     }
-    }
+    }*/
     
     double Vypocet_objemu_jehlan() {
         return (1.0/3.0) * Vypocet_obsahu_mnohouhelnik() * vyska;
@@ -67,7 +47,7 @@ public class Jehlan extends Kvadr {
         return Vypocet_obsahu_mnohouhelnik() + (Vypocet_obsahu_rovnostranny_trojuhelnik(plast) * pocet_stran);
     }
     
-    static int Nacitani(String tvar) throws IOException {
+    /*static int Nacitani(String tvar) throws IOException {
         boolean konec = true;
         int pocet = 0;
         do {
@@ -85,5 +65,5 @@ public class Jehlan extends Kvadr {
         }
         } while (!konec);
             return pocet;
-    }
+    }*/
 }
