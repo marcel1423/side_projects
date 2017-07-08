@@ -27,6 +27,8 @@ public class Kruznice extends Ctverec {
     }
     @Override
     void Vypis() throws IOException {
+        System.out.print("Zadej delku polomeru kruznice: ");
+        this.strana = Nacti_cislo.Nacitani();
         boolean vypni = false;
         do {
               System.out.println("1 - Obsah kruznice\n2 - Obvod kruznice");

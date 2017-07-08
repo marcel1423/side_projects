@@ -11,7 +11,7 @@ import java.io.IOException;
  *
  * @author mnovak
  */
-public class Ctverec {
+public class Ctverec  {
     protected double strana;
     
     Ctverec (double strana) {
@@ -34,6 +34,8 @@ public class Ctverec {
     }
     
     void Vypis() throws IOException {
+        System.out.print("Zadej delky strany ctverce: ");
+        this.strana = Nacti_cislo.Nacitani();
         boolean vypni = false;
         do {
               System.out.println("1 - Obsah ctverce\n2 - Obvod ctverce\n3 - Uhlopricka ctverce");

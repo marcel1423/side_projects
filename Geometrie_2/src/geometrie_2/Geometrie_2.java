@@ -11,17 +11,6 @@ public class Geometrie_2 {
      */
     
     public static void main(String[] args) throws IOException {
-        Ctverec ctverec;
-        Trojuhelnik trojuhelnik;
-        Mnohouhelnik mnohouhelnik;
-        Obdelnik obdelnik;
-        Kruznice kruznice;
-        Krychle krychle;
-        Kvadr kvadr;
-        Jehlan jehlan;
-        Valec valec;
-        Koule koule;
-        Hranol hranol;
         boolean konec = false;
         int vyber;
         do {
@@ -32,45 +21,22 @@ public class Geometrie_2 {
                 case 1:
                     System.out.println("1 - Ctverec\n2 - Obdelnik\n3 - Trojuhelnik\n4 - Mnohouhelnik\n5 - Kruznice\n0 - Zpet");
                     switch ((int)Nacti_cislo.Nacitani()) {
-                        case 1:
-                            System.out.print("Zadej delky strany ctverce: ");
-                            //Do ctverce prirazuji hodnotu tim ze je rovnou nacitam a nemusim si tak vytvaret dalsi promenou
-                            ctverec = new Ctverec(Nacti_cislo.Nacitani());
-                            ctverec.Vypis();
-                            break;
-                        case 2:
-                            System.out.print("Zadej delku strany a: ");
-                            double a = Nacti_cislo.Nacitani();
-                            System.out.print("Zadej delku strany b: ");
-                            obdelnik = new Obdelnik(a, Nacti_cislo.Nacitani());
-                            obdelnik.Vypis();
-                            break;
-                        case 3:
-                            System.out.print("Zadej delku strany a: ");
-                            double a_t = Nacti_cislo.Nacitani();
-                            System.out.print("Zadej delku strany b: ");
-                            double b_t = Nacti_cislo.Nacitani();
-                            System.out.print("Zadej delku strany a: ");
-                            trojuhelnik = new Trojuhelnik(a_t, b_t, Nacti_cislo.Nacitani());
-                            trojuhelnik.Vypis();
-                            break;
-                        case 4:
-                            System.out.print("Zadej pocet stran: " );
-                            int max = (int)Nacti_cislo.Nacitani();
-                            System.out.print("Zadej delku strany  pravidelneho mnohouhelniku: ");
-                            /*Do mnohouhelniku prirazuji pole tim ze ho rovnou nacitam a nemusim si tak vytvaret dalsi promenou a jeho
-                            * rozsah je dany promennou max tu zadat musim protoze po ni nasleduje dalsi otazka
-                            */
-                            mnohouhelnik = new Mnohouhelnik(Nacti_cislo.Nacitani(), max);
-                            mnohouhelnik.Vypis();
-                            break;
-                        case 5:
-                            System.out.print("Zadej delku polomeru kruznice: ");
-                            kruznice = new Kruznice(Nacti_cislo.Nacitani());
-                            kruznice.Vypis();
-                            break;
+                        case 1: Ctverec ctverec = new Ctverec();
+                                ctverec.Vypis();
+                                break;
+                        case 2: Obdelnik obdelnik = new Obdelnik();
+                                obdelnik.Vypis();
+                                break;
+                        case 3: Trojuhelnik trojuhelnik = new Trojuhelnik();
+                                trojuhelnik.Vypis();
+                                break;
+                        case 4: Mnohouhelnik mnohouhelnik = new Mnohouhelnik();
+                                mnohouhelnik.Vypis();
+                                break;
+                        case 5: Kruznice kruznice = new Kruznice();
+                                kruznice.Vypis();
+                                break;
                         case 0: konec = true; break;
-                        //default: System.out.println("Vyber 0 - 5!");
                     }       break;
                 case 0:
                     konec = true;
@@ -78,104 +44,28 @@ public class Geometrie_2 {
                 case 2:
                     System.out.println("1 - Krychle\n2 - Kvadr\n3 - Jehlan\n4 - Valec\n5 - Koule\n6 - Hranol\n7 - Kuzel\n0 - Zpet");
                     switch ((int)Nacti_cislo.Nacitani()) {
-                        case 1:
-                            System.out.print("Zadej delky strany krychle: ");
-                            //Do ctverce prirazuji hodnotu tim ze je rovnou nacitam a nemusim si tak vytvaret dalsi promenou
-                            krychle = new Krychle(Nacti_cislo.Nacitani());
-                            krychle.Vypis();
-                            break;
-                        case 2:
-                            System.out.print("Zadej delku strany a: ");
-                            double a = Nacti_cislo.Nacitani();
-                            System.out.print("Zadej delku strany b: ");
-                            double b = Nacti_cislo.Nacitani();
-                            System.out.print("Zadej delku strany a: ");
-                            kvadr = new Kvadr(a, b, Nacti_cislo.Nacitani());
-                            kvadr.Vypis();
-                            break;
-                        case 3: //jehlan
-                            boolean vypni = false;
-                            do {
-                                System.out.println("1 - Objem jehlanu\n2 - Povrch jehlanu");
-                                  switch ((int)Nacti_cislo.Nacitani()) {
-                                      case 1:   System.out.print("Zadej pocet stran podstavy: ");
-                                                int max = (int)Nacti_cislo.Nacitani();
-                                                System.out.print("\nZadej delku strany podstavy: ");
-                                                double pom_1 = Nacti_cislo.Nacitani();
-                                                System.out.print("Zadej delku vysky: ");
-                                                jehlan = new Jehlan (pom_1, Nacti_cislo.Nacitani(), max);
-                                                System.out.println("Objem  jehlanu je: " + jehlan.Vypocet_objemu_jehlan());
-                                      break;
-                                      case 2:   System.out.print("Zadej pocet stran podstavy: ");
-                                                int max_1 = (int)Nacti_cislo.Nacitani();
-                                                System.out.print("\nZadej delku strany podstavy: ");
-                                                double pom = Nacti_cislo.Nacitani();
-                                                System.out.print("Zadej delku strany plaste: ");
-                                                jehlan = new Jehlan (max_1, pom, Nacti_cislo.Nacitani());
-                                                System.out.println("Povrch  jehlanu je: " + jehlan.Vypocet_povrchu_jehlan());
-                                      break;
-                                      default: System.out.println("Zadej 1 - 2!"); vypni = true;  
-                                  }
-                            } while ( vypni ); break;
-                        case 4:
-                            System.out.print("Zadej delku polomeru valce: ");
-                            double polomer = Nacti_cislo.Nacitani();
-                            System.out.print("Zadej delku vysky: ");
-                            valec = new Valec(polomer, Nacti_cislo.Nacitani());
-                            valec.Vypis();
-                            break;
-                        case 5:
-                            System.out.print("Zadej polomer koule: ");
-                            koule = new Koule(Nacti_cislo.Nacitani());
-                            koule.Vypis();
-                            break;
-                        case 6: //hranol
-                            boolean vypni_1 = false;
-                            do {
-                                System.out.println("1 - Objem hranolu\n2 - Povrch hranolu");
-                                  switch ((int)Nacti_cislo.Nacitani()) {
-                                      case 1:   System.out.print("Zadej vysku: " );
-                                                double vyska = Nacti_cislo.Nacitani();
-                                                System.out.print("Zadej pocet stran mnohouhelniku: ");
-                                                int max_1 = (int)Nacti_cislo.Nacitani();
-                                                System.out.print("Zadej delku strany podstavy: ");
-                                                hranol = new Hranol (Nacti_cislo.Nacitani(), vyska, max_1);
-                                                System.out.println("Objem hranolu je: " + hranol.Vypocet_objemu_hranol());
-                                      break;
-                                      case 2:
-                                          System.out.print("Zadej vysku: " );
-                                          double vyska_1 = Nacti_cislo.Nacitani();
-                                          System.out.print("Zadej pocet stran mnohouhelniku: ");
-                                          int max = (int)Nacti_cislo.Nacitani();
-                                          System.out.print("\nZadej delku strany podstavy: ");
-                                                hranol = new Hranol (Nacti_cislo.Nacitani(), vyska_1, max);
-                                                System.out.println("Povrch  hranolu je: " + hranol.Vypocet_povrchu_hranol());
-                                      break;
-                                      default: System.out.println("Zadej 1 - 2!"); vypni_1 = true;  
-                                  }
-                            } while ( vypni_1 ); break;
-                        case 7: //kuzel
-                            boolean vypni_2 = false;
-                            do {
-                                System.out.println("1 - Objem kuzelu\n2 - Povrch kuzelu");
-                                  switch ((int)Nacti_cislo.Nacitani()) {
-                                      case 1:   System.out.print("Zadej vysku: " );
-                                                double vyska = Nacti_cislo.Nacitani();
-                                                System.out.print("Zadej delku polomeru podstavy: ");
-                                                Kuzel kuzel = new Kuzel (Nacti_cislo.Nacitani(), vyska);
-                                                System.out.println("Objem kuzelu je: " + kuzel.Vypocet_objemu_kuzel());
-                                      break;
-                                      case 2:   
-                                                System.out.print("\nZadej delku polomeru podstavy: ");
-                                                double pom = Nacti_cislo.Nacitani();
-                                                System.out.print("Zadej delku vysky: ");
-                                                kuzel = new Kuzel (pom, Nacti_cislo.Nacitani());
-                                                System.out.println("Povrch  kuzelu je: " + kuzel.Vypocet_povrchu_kuzel());
-                                      break;
-                                      default: System.out.println("Zadej 1 - 2!"); vypni_2 = true;  
-                                  }
-                            } while ( vypni_2 ); break;
-                            
+                        case 1: Krychle krychle = new Krychle();
+                                krychle.Vypis();
+                                break;
+                        case 2: Kvadr kvadr = new Kvadr();
+                                kvadr.Vypis();
+                                break;
+                        case 3: Jehlan jehlan = new Jehlan();
+                                jehlan.Vypis();
+                                break;
+                        case 4: Valec valec = new Valec();
+                                valec.Vypis();
+                                break;
+                        case 5: Koule koule = new Koule();
+                                koule.Vypis();
+                                break;
+                        case 6: Hranol hranol = new Hranol();
+                                hranol.Vypis();
+                                break;
+                        case 7: Kuzel kuzel = new Kuzel();
+                                kuzel.Vypis();
+                                break;
+                        case 0: konec = true; break;
                     }           break;
             } 
     } while (!konec);

@@ -5,6 +5,9 @@
  */
 package geometrie_2;
 
+import java.io.IOError;
+import java.io.IOException;
+
 /**
  *
  * @author mnovak
@@ -23,5 +26,25 @@ public class Hranol extends Jehlan {
     
     double Vypocet_povrchu_hranol() {
         return (2 * Vypocet_obsahu_mnohouhelnik()) + (Vypocet_obvodu_mnohouhelnik() * vyska);
+    }
+    
+    @Override
+     void Vypis() throws IOException {
+       System.out.print("Zadej vysku: " );
+       this.vyska = Nacti_cislo.Nacitani();
+       System.out.print("Zadej pocet stran mnohouhelniku: ");
+       this.pocet_stran = (int)Nacti_cislo.Nacitani();
+       System.out.print("Zadej delku strany podstavy: ");
+       this.strana = Nacti_cislo.Nacitani();
+       
+       boolean vypni = false;
+       do {
+       System.out.println("1 - Objem hranolu\n2 - Povrch hranolu");
+       switch ((int)Nacti_cislo.Nacitani()) {
+           case 1: System.out.println("Objem hranolu je: " + Vypocet_objemu_hranol()); break;
+           case 2: System.out.println("Povrch hranolu je: " + Vypocet_povrchu_hranol()); break;
+           default: System.out.println("Zadej 1 - 2!"); vypni = true;
+       } 
+       } while (vypni);
     }
 }

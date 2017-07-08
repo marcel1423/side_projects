@@ -30,6 +30,8 @@ public class Koule extends Krychle {
     
     @Override
     void Vypis() throws IOException {
+        System.out.print("Zadej polomer koule: ");
+        this.strana = Nacti_cislo.Nacitani();
         boolean vypni = false;
         do {
               System.out.println("1 - Objem koule\n2 - Povrch koule");

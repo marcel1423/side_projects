@@ -39,6 +39,10 @@ public class Obdelnik extends Kruznice {
     
     @Override
     void Vypis() throws IOException {
+        System.out.print("Zadej delku strany a: ");
+        this.strana = Nacti_cislo.Nacitani();
+        System.out.print("Zadej delku strany b: ");
+        this.strana_1 = Nacti_cislo.Nacitani();
         boolean vypni = false;
         do {
               System.out.println("1 - Obsah obdelniku\n2 - Obvod obdelniku\n3 - Uhlopricka obdelniku");
