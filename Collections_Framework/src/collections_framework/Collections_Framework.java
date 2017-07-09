@@ -13,7 +13,10 @@ public class Collections_Framework {
         //array_list.Dynamicke_pole();
         
         Linked_List linked_list = new Linked_List();
-        linked_list.Ukazka_LinkeList();
+        //linked_list.Ukazka_LinkeList();
+        
+        Hash_Set hash_set = new Hash_Set();
+        hash_set.Ukazka_HashSet();
     }
     
     
