@@ -10,9 +10,9 @@ import java.util.*;
  * @author mnovak
  */
 public class Array_List {
+    //implementuje rozhrani List a Collections
     void Dynamicke_pole () {
         ArrayList<String> al = new ArrayList<>();
-        String ret[] = {"ahoj", "jak", "se", "mas"};
         System.out.println("Pocatecni velikost pole al: " + al.size());
         //add (pridani prvku)
         al.add("c");
