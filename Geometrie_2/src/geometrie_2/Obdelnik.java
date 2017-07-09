@@ -6,6 +6,7 @@
 package geometrie_2;
 
 import java.io.IOException;
+import java.util.*;
 
 /**
  *
@@ -39,10 +40,25 @@ public class Obdelnik extends Kruznice {
     
     @Override
     void Vypis() throws IOException {
+        ArrayList<Double> list = new ArrayList<>();
+        String pole[] = new String[5];
         System.out.print("Zadej delku strany a: ");
+        list.add(Nacti_cislo.Nacitani());
+        System.out.print("Zadej delku strany b: ");
+        list.add(Nacti_cislo.Nacitani());
+        System.out.print("Zadej obsah: ");
+        list.add(Nacti_cislo.Nacitani());
+        System.out.print("Zadej obvod: ");
+        list.add(Nacti_cislo.Nacitani());
+        System.out.print("Zadej uhlopricku: ");
+        list.add(Nacti_cislo.Nacitani());
+        System.out.print(list);
+        System.out.println();
+        
+       /* System.out.print("Zadej delku strany a: ");
         this.strana = Nacti_cislo.Nacitani();
         System.out.print("Zadej delku strany b: ");
-        this.strana_1 = Nacti_cislo.Nacitani();
+        this.strana_1 = Nacti_cislo.Nacitani();*/
         boolean vypni = false;
         do {
               System.out.println("1 - Obsah obdelniku\n2 - Obvod obdelniku\n3 - Uhlopricka obdelniku");

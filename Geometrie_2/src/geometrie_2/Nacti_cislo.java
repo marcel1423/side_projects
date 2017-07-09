@@ -15,12 +15,13 @@ import java.util.Scanner;
 public class Nacti_cislo {
     
     static double Nacitani() throws IOException {
-        double strana;
+        double strana = 0;
       //  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
       Scanner br = new Scanner(System.in);
       boolean konec = true;
             do {
                 try {
+                    if(br.hasNext("stop")) break;
                         strana = br.nextDouble();
                         konec = false;
                     } catch (InputMismatchException vyj) {

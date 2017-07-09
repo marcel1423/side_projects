@@ -36,7 +36,7 @@ public class Geometrie_2 {
                         case 5: Kruznice kruznice = new Kruznice();
                                 kruznice.Vypis();
                                 break;
-                        case 0: konec = true; break;
+                        case 0: break;
                     }       break;
                 case 0:
                     konec = true;
@@ -65,7 +65,7 @@ public class Geometrie_2 {
                         case 7: Kuzel kuzel = new Kuzel();
                                 kuzel.Vypis();
                                 break;
-                        case 0: konec = true; break;
+                        case 0: break;
                     }           break;
             } 
     } while (!konec);
